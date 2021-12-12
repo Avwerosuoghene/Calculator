@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --fontcolor: #fff;
+    --backgroundcolor:rgb(34, 37, 45);
+    --color2:rgba(40,44,53);
+    --color3: rgb(233, 233, 233);
+    --color4: rgb(199, 199, 199);
+    --color5: rgb(167, 166, 166);
+
+
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+p{
+    font-size: 1.5rem;
+    margin: 0;
+
+}
+
+body {
+    color: var(--fontcolor);
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238,238,238);
+}
+
+.dn-container {
+    position: absolute;
+    width: 25%;
+    height: 5%;
+    display: flex;
+    background-color:var(--color2) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+button {
+    background: none;
+    border: none;
+    margin:0 5px;
+    color: var(--color4);
+}
+
+button .togglemood {
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+button .togglemood.active {
+    transform: scale(1.2);
+    color: var(--fontcolor);
+}
+/* .dn-container > * {
+    margin:0 8px;
+} */
+
+.calcContainer {
+    width: 340px;
+    height: 650px;
+    background-color: var(--backgroundcolor);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: -5px 5px 10px rgba(39, 38, 38,0.3);
+}
+
+.display {
+    width: 100%;
+    position: absolute;
+    /* right: 0%; */
+    text-align: right;
+    padding: 15px;
+    top: 12%;
+    overflow: hidden;
+}
+
+
+#history {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 80px;
+    resize: none;
+    color: var(--fontcolor);
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+#history::-webkit-scrollbar {
+    background: var(--backgroundcolor);
+    /* width: 200px; */
+}
+
+#history::-webkit-scrollbar-thumb {
+    background: rgb(163, 41, 51,0.3);
+  	background-size: 10px 10px;
+}
+#history::-webkit-scrollbar-thumb:hover {
+    background: rgb(163, 41, 51,0.7)
+}
+
+
+#history:focus {
+    outline: none;
+}
+
+.display p {
+    color: var(--color5);
+}
+
+.currentOps {
+    position: absolute;
+    /* background-color: red; */
+    width: 100%;
+    top: 30%;
+    color: var(--color4);
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+#current-entry {
+    font-size: 1.5rem;
+}
+
+.keys {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: 0%;
+    background-color: var(--color2);
+    border-radius: 30px 30px 20px 20px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.operator, .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+
+.operator:active, .number:active {
+    transform: scale(0.9);
+}
+
+.operator > *, .number > * {
+    margin: 0;
+    width: 80%;
+    height: 80%;
+    background-color: var(--backgroundcolor);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.operator {
+    color:rgb(163, 41, 51)
+}
+
+.clear, .squareroot, .modulus {
+    color: rgb(45, 141, 133);
+}
