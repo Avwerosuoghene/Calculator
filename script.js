@@ -141,6 +141,12 @@ function operationEnter() {
 function evaluate () {
     try {
         currentEntry.innerText = eval( history.innerHTML);
+        if (currentEntry.innerText == Infinity || currentEntry.innerText == "NaN"){
+            currentEntry.innerText = "Math Error";
+            equals();
+            setTimeout(clearOperator
+                ,3000);
+        }
         numdisp = ""
     } catch {
         backspace(currentOperator)
@@ -154,6 +160,7 @@ function clearOperator () {
     history.innerHTML = "";
     numdisp = "";
     currentOperator = ""
+    history.style.fontSize = "1.5rem"
     return
 
 }
