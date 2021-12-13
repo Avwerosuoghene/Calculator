@@ -32,7 +32,7 @@ function displayNumbers () {
                 clearOperator();
             }
 
-                numdisp += String(number.children[0].innerText);
+                numdisp += String(number.children[0].innerText)
                  
                 let hist = String(number.children[0].innerText);
                 history.innerHTML += numdisp; 
